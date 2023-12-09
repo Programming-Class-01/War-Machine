@@ -1,0 +1,17 @@
+{
+  "name": "war-machine",
+  "version": "1.0.0",
+  "description": "Cards that can be different",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && node ./build/main.js"
+  },
+  "author": "Zak Jacobson",
+  "license": "LGPL-3.0-or-later",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0"
+  }
+}
