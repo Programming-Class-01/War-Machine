@@ -1,19 +1,24 @@
 console.log('Hello WARld')
 
 interface ICard {
-    uuid: uuid,
-    value: (0-12),
-    suit: (0-3)
+    value: typeof values;
+    suit: typeof suits;
+	face: typeof faces;
   }
 
+  interface IDeck {
+	owner: typeof owner;
+	cardcount: ICard;
+  }
+
+var owner = [1, 2];
 var suits = ["spades", "diamonds", "clubs", "hearts"];
-var values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+var values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+var faces = ["Ace", "Jack", "Queen", "King"];
 
-function makeDeck()
-{
-	let deck = new Array();
-
-	for(let i = 0; i < suits.length; i++)
+function makeDeck(): IDeck {
+	let deck = new Array()
+		for(let i = 0; i < suits.length; i++)
 	{
 		for(let x = 0; x < values.length; x++)
 		{
@@ -23,9 +28,28 @@ function makeDeck()
 	}
 
 	return deck;
+
 }
 
-makeDeck()
+
+
+// function makeDeck()
+// {
+// 	let deck = IDeck;
+
+// 	for(let i = 0; i < suits.length; i++)
+// 	{
+// 		for(let x = 0; x < values.length; x++)
+// 		{
+// 			let card = {Value: values[x], Suit: suits[i]};
+// 			deck.push(card);
+// 		}
+// 	}
+
+// 	return deck;
+// }
+
+// makeDeck()
 
 
 function shuffle(deck)
