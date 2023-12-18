@@ -1,10 +1,4 @@
-console.log('Hello WARld')
-
-interface ICard {
-	worth: number;
-	suit: string;
-	face: string;
-}
+import { ICard } from "./interfaces";
 
 const owner = [1, 2];
 const suits = ["spades", "diamonds", "clubs", "hearts"];
@@ -34,9 +28,6 @@ function makeDeck(): ICard[] | Error {
     return newDeck;
 }
 makeDeck
-
-
-
 
 function shuffle(deck) {
 	for (let i = 0; i < 1000; i++) {
