@@ -13,7 +13,7 @@ function makeDeck(): ICard[] | Error {
 
     for (let i = 0; i < suits.length; i++) {
 
-        for (let c = 0; c < worth.length; c++) { 
+        for (let c = 0; c < worth.length; c++) {
             const points = worth[c]
             const suit = suits[i]
             const face = faces[c]
@@ -22,22 +22,23 @@ function makeDeck(): ICard[] | Error {
             if (typeof suit === `undefined`) return Error(`CardArray at ${suits[i]} is undefined`)
             if (typeof face === `undefined`) return Error(`CardArray at ${faces[c]} is undefined`)
 
-            newDeck.push({worth: points, suit: suit, face: face})
+            newDeck.push({ worth: points, suit: suit, face: face })
         }
     }
     return newDeck;
 }
 makeDeck
 
-function shuffle(deck) {
-	for (let i = 0; i < 1000; i++) {
-		let location1 = Math.floor((Math.random() * deck.length));
-		let location2 = Math.floor((Math.random() * deck.length));
-		let tmp = deck[location1];
+function shuffle(deck: ICard[]) {
+    for (let i = 0; i < 1000; i++) {
+        let location1 = Math.floor((Math.random() * deck.length));
+        let location2 = Math.floor((Math.random() * deck.length));
+        let tmp = deck[location1];
 
-		deck[location1] = deck[location2];
-		deck[location2] = tmp;
-	}
+        deck[location1] = deck[location2];
+        deck[location2] = tmp;
+        
+if(deck === `undefined`) //Figure out the correct way to do this.
+    }
 }
-
 shuffle
