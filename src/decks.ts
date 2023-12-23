@@ -29,16 +29,19 @@ function makeDeck(): ICard[] | Error {
 }
 makeDeck
 
-function shuffle(deck: ICard[]) {
-    for (let i = 0; i < 1000; i++) {
-        let location1 = Math.floor((Math.random() * deck.length));
-        let location2 = Math.floor((Math.random() * deck.length));
-        let tmp = deck[location1];
+function shuffle() {
+    const deck = makeDeck()
+    if (deck instanceof Error) return Error(`makeDeck function failed, check it out.`)
+    const shuffledDeck: ICard[] = []
+    const iterations = deck.length
+    for (let i = 0; i < iterations; i++) {
+        const location1 = Math.floor((Math.random() * deck.length));
+        if (location1 === undefined) return Error(`Location1 is undefined.`);
 
-        deck[location1] = deck[location2];
-        deck[location2] = tmp;
-        
-if(deck === `undefined`) //Figure out the correct way to do this.
+        const pickedCard = deck.splice(location1 - 1, 1)[0];
+        if (pickedCard === undefined) return Error(`Location1 is undefined.`);
+        shuffledDeck.push(pickedCard)
     }
+    return shuffledDeck
 }
 shuffle
